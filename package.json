@@ -1,19 +1,34 @@
 {
-  "name": "reaction",
-  "version": "0.0.1",
-  "description": "A lightweight suite of React components for building amazing UIs",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/VirajShah21/Reaction.git"
-  },
-  "author": "Viraj Shah",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/VirajShah21/Reaction/issues"
-  },
-  "homepage": "https://github.com/VirajShah21/Reaction#readme"
+    "name": "reaction",
+    "version": "0.0.1",
+    "description": "A lightweight suite of React components for building amazing UIs",
+    "main": "./lib/cjs/index.js",
+    "module": "./lib/esm/index.js",
+    "types": "./lib/esm/index.d.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "yarn build:esm && yarn build:cjs",
+        "build:esm": "tsc",
+        "build:cjs": "tsc --module commonjs --outDir lib/cjs"
+    },
+    "peerDependencies": {
+        "react": "^16.8.0",
+        "react-dom": "^16.8.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/VirajShah21/Reaction.git"
+    },
+    "author": "Viraj Shah",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/VirajShah21/Reaction/issues"
+    },
+    "homepage": "https://github.com/VirajShah21/Reaction#readme",
+    "devDependencies": {
+        "@types/react": "^18.0.9",
+        "@types/react-dom": "^18.0.3",
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0"
+    }
 }
