@@ -1,5 +1,4 @@
 import React from 'react';
-import './Stacks.css';
 declare type Alignment = 'around' | 'between' | 'evenly' | 'start' | 'center' | 'end' | 'stretch';
 interface StackProps {
     children?: React.ReactNode | React.ReactNode[];

@@ -1,5 +1,4 @@
 import React from 'react';
-import './Stacks.css';
 
 type Alignment = 'around' | 'between' | 'evenly' | 'start' | 'center' | 'end' | 'stretch';
 
