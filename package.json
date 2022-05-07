@@ -1,0 +1,19 @@
+{
+  "name": "reaction",
+  "version": "0.0.1",
+  "description": "A lightweight suite of React components for building amazing UIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VirajShah21/Reaction.git"
+  },
+  "author": "Viraj Shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VirajShah21/Reaction/issues"
+  },
+  "homepage": "https://github.com/VirajShah21/Reaction#readme"
+}
