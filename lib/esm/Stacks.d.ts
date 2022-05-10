@@ -1,13 +1,17 @@
-import React from 'react';
-declare type Alignment = 'around' | 'between' | 'evenly' | 'start' | 'center' | 'end' | 'stretch';
+import React from "react";
+declare type Alignment = "around" | "between" | "evenly" | "start" | "center" | "end" | "stretch";
 interface StackProps {
     children?: React.ReactNode | React.ReactNode[];
     justify?: Alignment;
     align?: Alignment;
+    justifySelf?: Alignment;
+    alignSelf?: Alignment;
     className?: string;
     id?: string;
     style?: React.CSSProperties;
     grow?: number;
+    height?: string;
+    width?: string;
     draggable?: boolean;
     hidden?: boolean;
     onMouseLeave?: React.MouseEventHandler;
