@@ -1,9 +1,16 @@
-import React from 'react';
+import React from "react";
 
-type Alignment = 'around' | 'between' | 'evenly' | 'start' | 'center' | 'end' | 'stretch';
+type Alignment =
+    | "around"
+    | "between"
+    | "evenly"
+    | "start"
+    | "center"
+    | "end"
+    | "stretch";
 
 interface BaseStackProps extends StackProps {
-    direction: 'h' | 'v';
+    direction: "h" | "v";
 }
 
 interface StackProps {
@@ -11,10 +18,14 @@ interface StackProps {
     children?: React.ReactNode | React.ReactNode[];
     justify?: Alignment;
     align?: Alignment;
+    justifySelf?: Alignment;
+    alignSelf?: Alignment;
     className?: string;
     id?: string;
     style?: React.CSSProperties;
     grow?: number;
+    height?: string;
+    width?: string;
 
     // * JSX Props
     draggable?: boolean;
@@ -34,34 +45,46 @@ interface StackProps {
 function Stack(props: BaseStackProps) {
     function alignmentToCSS(a: Alignment) {
         switch (a) {
-            case 'around':
-                return 'space-around';
-            case 'between':
-                return 'space-between';
-            case 'evenly':
-                return 'space-evenly';
-            case 'start':
-                return 'flex-start';
-            case 'center':
-                return 'center';
-            case 'end':
-                return 'flex-end';
-            case 'stretch':
-                return 'stretch';
+            case "around":
+                return "space-around";
+            case "between":
+                return "space-between";
+            case "evenly":
+                return "space-evenly";
+            case "start":
+                return "flex-start";
+            case "center":
+                return "center";
+            case "end":
+                return "flex-end";
+            case "stretch":
+                return "stretch";
             default:
-                return 'center';
+                return "center";
         }
     }
 
     return (
         <div
             style={{
-                alignItems: props.align ? alignmentToCSS(props.align) : undefined,
-                justifyContent: props.justify ? alignmentToCSS(props.justify) : undefined,
+                alignItems: props.align
+                    ? alignmentToCSS(props.align)
+                    : undefined,
+                justifyContent: props.justify
+                    ? alignmentToCSS(props.justify)
+                    : undefined,
+                alignSelf: props.alignSelf
+                    ? alignmentToCSS(props.alignSelf)
+                    : undefined,
+                justifySelf: props.justifySelf
+                    ? alignmentToCSS(props.justifySelf)
+                    : undefined,
                 flexGrow: props.grow,
+                height: props.style?.height ?? props.height ?? undefined,
+                width: props.style?.width ?? props.width ?? undefined,
                 ...props.style,
             }}
-            className={`stack ${props.direction}stack ${props.className ?? ''}`}
+            className={`stack ${props.direction}stack ${props.className ?? ""}`}
             id={props.id}
             onMouseOver={props.onMouseOver}
             onMouseOut={props.onMouseOut}
@@ -71,7 +94,8 @@ function Stack(props: BaseStackProps) {
             onDrag={props.onDrag}
             onMouseMove={props.onMouseMove}
             hidden={props.hidden}
-            draggable={props.draggable}>
+            draggable={props.draggable}
+        >
             {props.children}
         </div>
     );
@@ -80,12 +104,12 @@ function Stack(props: BaseStackProps) {
 function HStack(props: StackProps) {
     return Stack({
         ...props,
-        direction: 'h',
+        direction: "h",
     });
 }
 
 function VStack(props: StackProps) {
-    return Stack({ ...props, direction: 'v' });
+    return Stack({ ...props, direction: "v" });
 }
 
 function Spacer() {
