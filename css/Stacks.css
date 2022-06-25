@@ -4,6 +4,128 @@
     justify-content: center;
 }
 
+/** Justify content */
+
+.stack.justify-content-around {
+    justify-content: space-around;
+}
+
+.stack.justify-content-between {
+    justify-content: space-between;
+}
+
+.stack.justify-content-evenly {
+    justify-content: space-evenly;
+}
+
+.stack.justify-content-start {
+    justify-content: flex-start;
+}
+
+.stack.justify-content-center {
+    justify-content: center;
+}
+
+.stack.justify-content-end {
+    justify-content: flex-end;
+}
+
+.stack.justify-content-stretch {
+    justify-content: stretch;
+}
+
+/** Align items */
+
+.stack.align-items-around {
+    align-items: space-around;
+}
+
+.stack.align-items-between {
+    align-items: space-between;
+}
+
+.stack.align-items-evenly {
+    align-items: space-evenly;
+}
+
+.stack.align-items-start {
+    align-items: flex-start;
+}
+
+.stack.align-items-center {
+    align-items: center;
+}
+
+.stack.align-items-end {
+    align-items: flex-end;
+}
+
+.stack.align-items-stretch {
+    align-items: stretch;
+}
+
+/** Justify self */
+
+.stack.justify-self-around {
+    justify-self: space-around;
+}
+
+.stack.justify-self-between {
+    justify-self: space-between;
+}
+
+.stack.justify-self-evenly {
+    justify-self: space-evenly;
+}
+
+.stack.justify-self-start {
+    justify-self: flex-start;
+}
+
+.stack.justify-self-center {
+    justify-self: center;
+}
+
+.stack.justify-self-end {
+    justify-self: flex-end;
+}
+
+/** Align self */
+
+.stack.align-self-stretch {
+    align-self: stretch;
+}
+
+.stack.align-self-around {
+    align-self: space-around;
+}
+
+.stack.align-self-between {
+    align-self: space-between;
+}
+
+.stack.align-self-evenly {
+    align-self: space-evenly;
+}
+
+.stack.align-self-start {
+    align-self: flex-start;
+}
+
+.stack.align-self-center {
+    align-self: center;
+}
+
+.stack.align-self-end {
+    align-self: flex-end;
+}
+
+.stack.align-self-stretch {
+    align-self: stretch;
+}
+
+/** Horizontal/Vertical stacks */
+
 .hstack {
     flex-direction: row;
     width: 100%;
