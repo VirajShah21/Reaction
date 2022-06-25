@@ -124,6 +124,20 @@
     align-self: stretch;
 }
 
+/** Scroll Behavior */
+
+.stack.scroll-horizontal {
+    overflow-x: scroll;
+}
+
+.stack.scroll-vertical {
+    overflow-y: scroll;
+}
+
+.stack.scroll-both {
+    overflow: scroll;
+}
+
 /** Horizontal/Vertical stacks */
 
 .hstack {

@@ -19,6 +19,7 @@ interface StackProps {
     grow?: number;
     height?: string;
     width?: string;
+    scroll?: 'horizontal' | 'vertical' | 'both';
 
     // * JSX Props
     draggable?: boolean;
@@ -57,7 +58,9 @@ function Stack(props: BaseStackProps) {
             props.justify,
         )} ${alignmentClassName(props.align)} ${justifySelfClassName(
             props.alignSelf,
-        )} ${alignSelfClassName(props.justifySelf)}`;
+        )} ${alignSelfClassName(props.justifySelf)} ${
+            props.scroll ? `scroll-${props.scroll}` : ''
+        }`;
 
         while (cn.indexOf('  ') >= 0) cn = cn.replace('  ', ' ');
         return cn.trim();
