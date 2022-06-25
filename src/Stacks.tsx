@@ -35,21 +35,32 @@ interface StackProps {
     onDrag?: React.MouseEventHandler;
 }
 
+function justificationClassName(a?: Alignment) {
+    return a ? `justify-content-${a}` : '';
+}
+
+function alignmentClassName(a?: Alignment) {
+    return a ? `align-items-${a}` : '';
+}
+
+function justifySelfClassName(a?: Alignment) {
+    return a ? `justify-self-${a}` : '';
+}
+
+function alignSelfClassName(a?: Alignment) {
+    return a ? `align-self-${a}` : '';
+}
+
 function Stack(props: BaseStackProps) {
-    function justificationClassName(a?: Alignment) {
-        return a ? `justify-content-${a}` : '';
-    }
+    function getClassName() {
+        let cn = `stack ${props.direction}stack ${props.className ?? ''} ${justificationClassName(
+            props.justify,
+        )} ${alignmentClassName(props.align)} ${justifySelfClassName(
+            props.alignSelf,
+        )} ${alignSelfClassName(props.justifySelf)}`;
 
-    function alignmentClassName(a?: Alignment) {
-        return a ? `align-items-${a}` : '';
-    }
-
-    function justifySelfClassName(a?: Alignment) {
-        return a ? `justify-self-${a}` : '';
-    }
-
-    function alignSelfClassName(a?: Alignment) {
-        return a ? `align-self-${a}` : '';
+        while (cn.indexOf('  ') >= 0) cn = cn.replace('  ', ' ');
+        return cn.trim();
     }
 
     return (
@@ -60,11 +71,7 @@ function Stack(props: BaseStackProps) {
                 width: props.style?.width ?? props.width ?? undefined,
                 ...props.style,
             }}
-            className={`stack ${props.direction}stack ${
-                props.className ?? ''
-            } ${justificationClassName(props.justify)} ${alignmentClassName(
-                props.align,
-            )} ${justifySelfClassName(props.alignSelf)} ${alignSelfClassName(props.justifySelf)}`}
+            className={getClassName()}
             id={props.id}
             onMouseOver={props.onMouseOver}
             onMouseOut={props.onMouseOut}
@@ -80,19 +87,17 @@ function Stack(props: BaseStackProps) {
     );
 }
 
-function HStack(props: StackProps) {
+export function HStack(props: StackProps) {
     return Stack({
         ...props,
         direction: 'h',
     });
 }
 
-function VStack(props: StackProps) {
+export function VStack(props: StackProps) {
     return Stack({ ...props, direction: 'v' });
 }
 
-function Spacer() {
+export function Spacer() {
     return <div style={{ flexGrow: 1 }} />;
 }
-
-export { HStack, VStack, Spacer };
