@@ -7,10 +7,9 @@
     "types": "./lib/esm/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "yarn build:esm && yarn build:cjs && yarn build:css",
+        "build": "yarn build:esm && yarn build:cjs",
         "build:esm": "tsc",
         "build:cjs": "tsc --module commonjs --outDir lib/cjs",
-        "build:css": "cp -r css/* lib",
         "prepare": "yarn build"
     },
     "peerDependencies": {
