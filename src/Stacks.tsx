@@ -57,10 +57,8 @@ function Stack(props: BaseStackProps) {
         let cn = `stack ${props.direction}stack ${props.className ?? ''} ${justificationClassName(
             props.justify,
         )} ${alignmentClassName(props.align)} ${justifySelfClassName(
-            props.alignSelf,
-        )} ${alignSelfClassName(props.justifySelf)} ${
-            props.scroll ? `scroll-${props.scroll}` : ''
-        }`;
+            props.justifySelf,
+        )} ${alignSelfClassName(props.alignSelf)} ${props.scroll ? `scroll-${props.scroll}` : ''}`;
 
         while (cn.indexOf('  ') >= 0) cn = cn.replace('  ', ' ');
         return cn.trim();
