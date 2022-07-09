@@ -20,6 +20,7 @@ interface StackProps {
     height?: string;
     width?: string;
     scroll?: 'horizontal' | 'vertical' | 'both';
+    wrap?: boolean | 'reverse';
 
     // * JSX Props
     draggable?: boolean;
@@ -52,16 +53,32 @@ function alignSelfClassName(a?: Alignment) {
     return a ? `align-self-${a}` : '';
 }
 
+function wrapClassName(wrap?: boolean | 'reverse') {
+    if (wrap) {
+        if (wrap === 'reverse') {
+            return 'wrap-reverse';
+        }
+        return 'wrap';
+    }
+    return '';
+}
+
 function Stack(props: BaseStackProps) {
     function getClassName() {
-        let cn = `stack ${props.direction}stack ${props.className ?? ''} ${justificationClassName(
-            props.justify,
-        )} ${alignmentClassName(props.align)} ${justifySelfClassName(
-            props.justifySelf,
-        )} ${alignSelfClassName(props.alignSelf)} ${props.scroll ? `scroll-${props.scroll}` : ''}`;
+        const classList = [
+            'stack',
+            `${props.direction}stack`,
+            justificationClassName(props.justify),
+            alignmentClassName(props.align),
+            justifySelfClassName(props.justifySelf),
+            alignSelfClassName(props.alignSelf),
+            props.scroll ? `scroll-${props.scroll}` : '',
+            wrapClassName(props.wrap),
+        ];
 
-        while (cn.indexOf('  ') >= 0) cn = cn.replace('  ', ' ');
-        return cn.trim();
+        return classList
+            .filter(className => className !== '' && className !== undefined && className !== null)
+            .join(' ');
     }
 
     return (

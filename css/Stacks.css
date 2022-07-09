@@ -138,6 +138,16 @@
     overflow: scroll;
 }
 
+/** Wrap Behavior */
+
+.stack.wrap {
+    flex-wrap: wrap;
+}
+
+.stack.wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
 /** Horizontal/Vertical stacks */
 
 .hstack {
