@@ -65,7 +65,7 @@ function wrapClassName(wrap?: boolean | 'reverse') {
 
 function Stack(props: BaseStackProps) {
     function getClassName() {
-        const classList = [
+        return [
             'stack',
             `${props.direction}stack`,
             justificationClassName(props.justify),
@@ -74,9 +74,7 @@ function Stack(props: BaseStackProps) {
             alignSelfClassName(props.alignSelf),
             props.scroll ? `scroll-${props.scroll}` : '',
             wrapClassName(props.wrap),
-        ];
-
-        return classList
+        ]
             .filter(className => className !== '' && className !== undefined && className !== null)
             .join(' ');
     }
