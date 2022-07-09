@@ -74,6 +74,7 @@ function Stack(props: BaseStackProps) {
             alignSelfClassName(props.alignSelf),
             props.scroll ? `scroll-${props.scroll}` : '',
             wrapClassName(props.wrap),
+            props.className,
         ]
             .filter(className => className !== '' && className !== undefined && className !== null)
             .join(' ');
