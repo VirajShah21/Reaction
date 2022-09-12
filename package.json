@@ -2,15 +2,13 @@
     "name": "reaction",
     "version": "0.0.1",
     "description": "A lightweight suite of React components for building amazing UIs",
-    "main": "./lib/cjs/index.js",
-    "module": "./lib/esm/index.js",
-    "types": "./lib/esm/index.d.ts",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "./dist/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "yarn build:esm && yarn build:cjs",
-        "build:esm": "tsc",
-        "build:cjs": "tsc --module commonjs --outDir lib/cjs",
-        "prepare": "yarn build"
+        "prepare": "yarn rollup"
     },
     "peerDependencies": {
         "react": "^18.x",
@@ -33,6 +31,12 @@
         "react-dom": "^18.1.0"
     },
     "dependencies": {
+        "@rollup/plugin-commonjs": "^22.0.2",
+        "@rollup/plugin-node-resolve": "^14.0.1",
+        "@rollup/plugin-typescript": "^8.5.0",
+        "rollup": "^2.79.0",
+        "rollup-plugin-dts": "^4.2.2",
+        "tslib": "^2.4.0",
         "typescript": "^4.7.4"
     }
 }
