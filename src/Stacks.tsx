@@ -1,63 +1,9 @@
-import React from 'react';
-import { BaseStackProps, StackProps } from './model/stacks';
-import { getClassName } from './util/stack-classes';
+import React, { PropsWithChildren } from 'react';
+import { BaseStackProps, StackProps } from './model/stack-props';
+import { generateStackProps } from './util/stack-prop-generator';
 
-function Stack({
-    direction,
-    justify,
-    align,
-    justifySelf,
-    alignSelf,
-    scroll,
-    wrap,
-    className,
-    grow,
-    style,
-    height,
-    width,
-    id,
-    onMouseOver,
-    onMouseOut,
-    onMouseDown,
-    onMouseUp,
-    onClick,
-    children,
-    onDrag,
-    onMouseMove,
-    hidden,
-    draggable,
-}: BaseStackProps) {
-    return (
-        <div
-            style={{
-                flexGrow: grow,
-                height: style?.height ?? height ?? undefined,
-                width: style?.width ?? width ?? undefined,
-                ...style,
-            }}
-            className={getClassName({
-                direction,
-                scroll,
-                wrap,
-                className,
-                justify,
-                align,
-                justifySelf,
-                alignSelf,
-            })}
-            id={id}
-            onMouseOver={onMouseOver}
-            onMouseOut={onMouseOut}
-            onMouseDown={onMouseDown}
-            onMouseUp={onMouseUp}
-            onClick={onClick}
-            onDrag={onDrag}
-            onMouseMove={onMouseMove}
-            hidden={hidden}
-            draggable={draggable}>
-            {children}
-        </div>
-    );
+function Stack(props: PropsWithChildren<BaseStackProps>) {
+    return <div {...generateStackProps(props)}>{props.children}</div>;
 }
 
 export function HStack(props: StackProps) {

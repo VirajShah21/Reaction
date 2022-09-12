@@ -1,12 +1,6 @@
 import React from 'react';
 import { createContext, PropsWithChildren, useContext, useEffect, useState } from 'react';
-
-interface ScreenContstraintProps {
-    minWidth?: number;
-    maxWidth?: number;
-    minHeight?: number;
-    maxHeight?: number;
-}
+import { ScreenContstraintProps } from './model/screen-adapter';
 
 const context = createContext({
     width: window.innerWidth,

@@ -6,7 +6,6 @@ interface BaseStackProps extends StackProps {
 
 interface StackProps {
     // * Stack props
-    children?: React.ReactNode | React.ReactNode[];
     justify?: Alignment;
     align?: Alignment;
     justifySelf?: Alignment;
