@@ -2,9 +2,9 @@
     "name": "reaction",
     "version": "0.0.1",
     "description": "A lightweight suite of React components for building amazing UIs",
-    "main": "dist/cjs/index.js",
-    "module": "dist/esm/index.js",
-    "types": "./dist/index.d.ts",
+    "main": "lib/cjs/index.js",
+    "module": "lib/esm/index.js",
+    "types": "./lib/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "yarn rollup -c",
