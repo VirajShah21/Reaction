@@ -43,5 +43,4 @@ function ScreenConstraint({
 
 const useScreenAdapter = () => useContext(context);
 
-export default ScreenAdapter;
-export { ScreenConstraint };
+export { ScreenAdapter, ScreenConstraint };
