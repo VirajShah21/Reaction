@@ -1,0 +1,41 @@
+.InputField {
+    width: auto;
+    background: var(--fill-secondary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    padding: 0.25rem;
+}
+
+.InputField .Icon {
+    padding-right: 0.25rem;
+}
+
+.InputField .Input {
+    flex-grow: 1;
+    color: inherit;
+    font-size: inherit;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0.25rem;
+    width: none;
+}
+
+.InputField .ClearButton {
+    display: none;
+}
+
+.InputField:hover .ClearButton {
+    display: inline-flex;
+}
+
+.InputField button {
+    background: transparent;
+    border: none;
+    font-size: inherit;
+    color: inherit;
+    display: flex;
+}
