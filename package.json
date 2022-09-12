@@ -7,8 +7,8 @@
     "types": "./dist/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "yarn build:esm && yarn build:cjs",
-        "prepare": "yarn rollup"
+        "build": "yarn rollup -c",
+        "prepare": "yarn rollup -c"
     },
     "peerDependencies": {
         "react": "^18.x",
