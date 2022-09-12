@@ -6,14 +6,14 @@ function Stack(props: PropsWithChildren<BaseStackProps>) {
     return <div {...generateStackProps(props)}>{props.children}</div>;
 }
 
-export function HStack(props: StackProps) {
+export function HStack(props: PropsWithChildren<StackProps>) {
     return Stack({
         ...props,
         direction: 'h',
     });
 }
 
-export function VStack(props: StackProps) {
+export function VStack(props: PropsWithChildren<StackProps>) {
     return Stack({ ...props, direction: 'v' });
 }
 

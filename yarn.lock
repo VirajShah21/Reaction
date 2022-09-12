@@ -23,6 +23,24 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@ionic/core@^6.2.6":
+  version "6.2.6"
+  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-6.2.6.tgz#94427898ae332652bf3c6c39041ff860c9a7b56c"
+  integrity sha512-79VGvJ33YlCX/rhepfamL2YUQnqu3cruKMo0yFbrhyJWzoF3GTT/p371FHu1e+SdIZsMu/xcn+dkcTxQjEEcdA==
+  dependencies:
+    "@stencil/core" "^2.17.4"
+    ionicons "^6.0.3"
+    tslib "^2.1.0"
+
+"@ionic/react@^6.2.6":
+  version "6.2.6"
+  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-6.2.6.tgz#a55dae90f7b76fa854673f118b9c805ba4137791"
+  integrity sha512-sV1mMg5Wj62v/0+XTiH890biaAOHNmPw8xaWP3HOnjhtIJlT+Mr32RTs2e3LapH3lUYlIs2iNTW2q2gCnylW0Q==
+  dependencies:
+    "@ionic/core" "^6.2.6"
+    ionicons "^6.0.2"
+    tslib "*"
+
 "@rollup/plugin-commonjs@^22.0.2":
   version "22.0.2"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-commonjs/-/plugin-commonjs-22.0.2.tgz#ee8ca8415cda30d383b4096aad5222435b4b69b6"
@@ -64,6 +82,24 @@
     "@types/estree" "0.0.39"
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
+
+"@rollup/pluginutils@^4.2.0":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-4.2.1.tgz#e6c6c3aba0744edce3fb2074922d3776c0af2a6d"
+  integrity sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==
+  dependencies:
+    estree-walker "^2.0.1"
+    picomatch "^2.2.2"
+
+"@stencil/core@^2.17.4":
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.18.0.tgz#2556b0f8d1fb6f2c06c3fb22de495d59ca7daf05"
+  integrity sha512-NLEY8Jq59smyiivBAxHKipsp9YkkW/K/Vm90zAyXQqukb12i2SFucWHJ1Ik7ropVlhmMVvigyxXgRfQ9quIqtg==
+
+"@stencil/core@~2.16.0":
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.16.1.tgz#f6752026af72a10356d5b1f27e2db6b1ee0c730f"
+  integrity sha512-s/UJp9qxExL3DyQPT70kiuWeb3AdjbUZM+5lEIXn30I2DLcLYPOPXfsoWJODieQywq+3vPiLZeIdkoqjf6jcSw==
 
 "@types/estree@*":
   version "1.0.0"
@@ -246,6 +282,13 @@ inherits@2:
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
 
+ionicons@^6.0.2, ionicons@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-6.0.3.tgz#d1610e764109b121ddf006febbda80fcd7db0454"
+  integrity sha512-kVOWER991EMqLiVShrCSWKMHkgHZP7XfVdyN6YPMuoO33W7pc5CPNVNfR8OMe/I8rYEbaunyBs6dXNYpR6gGZw==
+  dependencies:
+    "@stencil/core" "~2.16.0"
+
 is-builtin-module@^3.1.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/is-builtin-module/-/is-builtin-module-3.2.0.tgz#bb0310dfe881f144ca83f30100ceb10cf58835e0"
@@ -360,6 +403,13 @@ rollup-plugin-dts@^4.2.2:
   optionalDependencies:
     "@babel/code-frame" "^7.16.7"
 
+rollup-plugin-import-css@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-import-css/-/rollup-plugin-import-css-3.0.3.tgz#603c96e5ca55a8b1a1fda94221189f3224532fcf"
+  integrity sha512-0JE1UVigYqhbbbwNalxcYCnYAD70JgJIqnaSYeBgCOO60ASx9hpJubfA8toxEv6ceZrRPnLF1cnr0vsskH1Uiw==
+  dependencies:
+    "@rollup/pluginutils" "^4.2.0"
+
 rollup@^2.79.0:
   version "2.79.0"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.79.0.tgz#9177992c9f09eb58c5e56cbfa641607a12b57ce2"
@@ -391,7 +441,7 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tslib@^2.4.0:
+tslib@*, tslib@^2.1.0, tslib@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==

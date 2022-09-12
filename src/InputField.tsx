@@ -1,14 +1,15 @@
 import { IonIcon } from '@ionic/react';
 import { arrowForwardCircle, closeCircle, lockClosed } from 'ionicons/icons';
-import { PropsWithChildren } from 'react';
-import { HStack } from 'reaction';
-import { joinClassNames } from 'utils/arrays';
+import React from 'react';
+import { PropsWithChildren, ReactNode } from 'react';
+import { joinClassNames } from './util/classnames';
 import styles from './InputField.module.css';
+import { HStack } from './Stacks';
 
 type HTMLInputType = 'text' | 'password' | 'email' | 'number' | 'search' | 'tel' | 'url';
 
 interface InputFieldProps {
-    icon: string | null;
+    icon: ReactNode;
     value: string;
     htmlType?: HTMLInputType;
     onChange: (value: string) => void;
@@ -35,12 +36,9 @@ function InputField({
 
     function getIcon() {
         if (icon) {
-            return (
-                <button>
-                    <IonIcon icon={icon} className={styles.Icon} />
-                </button>
-            );
+            return <button className={styles.Icon}>{icon}</button>;
         }
+        return;
     }
 
     function getGoButton() {
@@ -51,6 +49,7 @@ function InputField({
                 </button>
             );
         }
+        return;
     }
 
     function getClearButton() {
@@ -61,6 +60,7 @@ function InputField({
                 </button>
             );
         }
+        return;
     }
 
     return (
