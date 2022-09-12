@@ -35,4 +35,15 @@ interface StackProps {
     onDrag?: React.MouseEventHandler;
 }
 
-export type { Alignment, BaseStackProps, StackProps };
+interface StackClassOptions {
+    direction: 'h' | 'v';
+    justify?: Alignment;
+    align?: Alignment;
+    justifySelf?: Alignment;
+    alignSelf?: Alignment;
+    scroll?: 'horizontal' | 'vertical' | 'both';
+    wrap?: boolean | 'reverse';
+    className?: string;
+}
+
+export type { Alignment, BaseStackProps, StackProps, StackClassOptions };

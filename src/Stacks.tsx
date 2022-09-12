@@ -1,50 +1,61 @@
 import React from 'react';
-import { BaseStackProps, StackProps } from './model/stack-props';
-import {
-    alignmentClassName,
-    alignSelfClassName,
-    justificationClassName,
-    justifySelfClassName,
-    wrapClassName,
-} from './util/stack-classes';
+import { BaseStackProps, StackProps } from './model/stacks';
+import { getClassName } from './util/stack-classes';
 
-function Stack(props: BaseStackProps) {
-    function getClassName() {
-        return [
-            'stack',
-            `${props.direction}stack`,
-            justificationClassName(props.justify),
-            alignmentClassName(props.align),
-            justifySelfClassName(props.justifySelf),
-            alignSelfClassName(props.alignSelf),
-            props.scroll ? `scroll-${props.scroll}` : '',
-            wrapClassName(props.wrap),
-            props.className,
-        ]
-            .filter(className => className !== '' && className !== undefined && className !== null)
-            .join(' ');
-    }
-
+function Stack({
+    direction,
+    justify,
+    align,
+    justifySelf,
+    alignSelf,
+    scroll,
+    wrap,
+    className,
+    grow,
+    style,
+    height,
+    width,
+    id,
+    onMouseOver,
+    onMouseOut,
+    onMouseDown,
+    onMouseUp,
+    onClick,
+    children,
+    onDrag,
+    onMouseMove,
+    hidden,
+    draggable,
+}: BaseStackProps) {
     return (
         <div
             style={{
-                flexGrow: props.grow,
-                height: props.style?.height ?? props.height ?? undefined,
-                width: props.style?.width ?? props.width ?? undefined,
-                ...props.style,
+                flexGrow: grow,
+                height: style?.height ?? height ?? undefined,
+                width: style?.width ?? width ?? undefined,
+                ...style,
             }}
-            className={getClassName()}
-            id={props.id}
-            onMouseOver={props.onMouseOver}
-            onMouseOut={props.onMouseOut}
-            onMouseDown={props.onMouseDown}
-            onMouseUp={props.onMouseUp}
-            onClick={props.onClick}
-            onDrag={props.onDrag}
-            onMouseMove={props.onMouseMove}
-            hidden={props.hidden}
-            draggable={props.draggable}>
-            {props.children}
+            className={getClassName({
+                direction,
+                scroll,
+                wrap,
+                className,
+                justify,
+                align,
+                justifySelf,
+                alignSelf,
+            })}
+            id={id}
+            onMouseOver={onMouseOver}
+            onMouseOut={onMouseOut}
+            onMouseDown={onMouseDown}
+            onMouseUp={onMouseUp}
+            onClick={onClick}
+            onDrag={onDrag}
+            onMouseMove={onMouseMove}
+            hidden={hidden}
+            draggable={draggable}>
+            {children}
         </div>
     );
 }
