@@ -1,27 +1,32 @@
 import { Alignment, BaseStackProps, StackClassOptions } from '../model/stack-props';
+import styles from 'src/Stacks.module.css';
+
+function capitalize(s: string): string {
+    return s[0].toUpperCase() + s.slice(1);
+}
 
 function justificationClassName(a?: Alignment) {
-    return a ? `justify-content-${a}` : '';
+    return a ? styles[`JustifyContent${capitalize(a)}`] : '';
 }
 
 function alignmentClassName(a?: Alignment) {
-    return a ? `align-items-${a}` : '';
+    return a ? styles[`AlignItems${capitalize(a)}`] : '';
 }
 
 function justifySelfClassName(a?: Alignment) {
-    return a ? `justify-self-${a}` : '';
+    return a ? styles[`JustifySelf${capitalize(a)}`] : '';
 }
 
 function alignSelfClassName(a?: Alignment) {
-    return a ? `align-self-${a}` : '';
+    return a ? styles[`AlignSelf${capitalize(a)}`] : '';
 }
 
 function wrapClassName(wrap?: boolean | 'reverse') {
     if (wrap) {
         if (wrap === 'reverse') {
-            return 'wrap-reverse';
+            return styles.WrapReverse;
         }
-        return 'wrap';
+        return styles.Wrap;
     }
     return '';
 }
@@ -37,13 +42,13 @@ function getClassName({
     className,
 }: StackClassOptions) {
     return [
-        'stack',
-        `${direction}stack`,
+        styles.Stack,
+        direction === 'h' ? styles.HStack : styles.VStack,
         justificationClassName(justify),
         alignmentClassName(align),
         justifySelfClassName(justifySelf),
         alignSelfClassName(alignSelf),
-        scroll ? `scroll-${scroll}` : '',
+        scroll ? styles[`Scroll${capitalize(scroll)}`] : '',
         wrapClassName(wrap),
         className,
     ]

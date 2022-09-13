@@ -1,4 +1,4 @@
-.stack {
+.Stack {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,156 +6,156 @@
 
 /** Justify content */
 
-.stack.justify-content-around {
+.Stack.JustifyContentAround {
     justify-content: space-around;
 }
 
-.stack.justify-content-between {
+.Stack.JustifyContentBetween {
     justify-content: space-between;
 }
 
-.stack.justify-content-evenly {
+.Stack.JustifyContentEvenly {
     justify-content: space-evenly;
 }
 
-.stack.justify-content-start {
+.Stack.JustifyContentStart {
     justify-content: flex-start;
 }
 
-.stack.justify-content-center {
+.Stack.JustifyContentCenter {
     justify-content: center;
 }
 
-.stack.justify-content-end {
+.Stack.JustifyContentEnd {
     justify-content: flex-end;
 }
 
-.stack.justify-content-stretch {
+.Stack.JustifyContentStretch {
     justify-content: stretch;
 }
 
 /** Align items */
 
-.stack.align-items-around {
+.Stack.AlignItemsAround {
     align-items: space-around;
 }
 
-.stack.align-items-between {
+.Stack.AlignItemsBetween {
     align-items: space-between;
 }
 
-.stack.align-items-evenly {
+.Stack.AlignItemsEvenly {
     align-items: space-evenly;
 }
 
-.stack.align-items-start {
+.Stack.AlignItemsStart {
     align-items: flex-start;
 }
 
-.stack.align-items-center {
+.Stack.AlignItemsCenter {
     align-items: center;
 }
 
-.stack.align-items-end {
+.Stack.AlignItemsEnd {
     align-items: flex-end;
 }
 
-.stack.align-items-stretch {
+.Stack.AlignItemsStretch {
     align-items: stretch;
 }
 
 /** Justify self */
 
-.stack.justify-self-around {
+.Stack.JustifySelfAround {
     justify-self: space-around;
 }
 
-.stack.justify-self-between {
+.Stack.JustifySelfBetween {
     justify-self: space-between;
 }
 
-.stack.justify-self-evenly {
+.Stack.JustifySelfEvenly {
     justify-self: space-evenly;
 }
 
-.stack.justify-self-start {
+.Stack.JustifySelfStart {
     justify-self: flex-start;
 }
 
-.stack.justify-self-center {
+.Stack.JustifySelfCenter {
     justify-self: center;
 }
 
-.stack.justify-self-end {
+.Stack.JustifySelfEnd {
     justify-self: flex-end;
 }
 
 /** Align self */
 
-.stack.align-self-stretch {
+.Stack.AlignSelfStretch {
     align-self: stretch;
 }
 
-.stack.align-self-around {
+.Stack.AlignSelfAround {
     align-self: space-around;
 }
 
-.stack.align-self-between {
+.Stack.AlignSelfBetween {
     align-self: space-between;
 }
 
-.stack.align-self-evenly {
+.Stack.AlignSelfEvenly {
     align-self: space-evenly;
 }
 
-.stack.align-self-start {
+.Stack.AlignSelfStart {
     align-self: flex-start;
 }
 
-.stack.align-self-center {
+.Stack.AlignSelfCenter {
     align-self: center;
 }
 
-.stack.align-self-end {
+.Stack.AlignSelfEnd {
     align-self: flex-end;
 }
 
-.stack.align-self-stretch {
+.Stack.AlignSelfStretch {
     align-self: stretch;
 }
 
 /** Scroll Behavior */
 
-.stack.scroll-horizontal {
+.Stack.ScrollHorizontal {
     overflow-x: scroll;
 }
 
-.stack.scroll-vertical {
+.Stack.ScrollVertical {
     overflow-y: scroll;
 }
 
-.stack.scroll-both {
+.Stack.ScrollBoth {
     overflow: scroll;
 }
 
 /** Wrap Behavior */
 
-.stack.wrap {
+.Stack.Wrap {
     flex-wrap: wrap;
 }
 
-.stack.wrap-reverse {
+.Stack.WrapReverse {
     flex-wrap: wrap-reverse;
 }
 
 /** Horizontal/Vertical stacks */
 
-.hstack {
+.HStack {
     flex-direction: row;
     width: 100%;
 }
 
-.vstack {
+.VStack {
     flex-direction: column;
     height: 100%;
 }
